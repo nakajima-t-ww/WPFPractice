@@ -53,6 +53,7 @@ namespace WpfPractice
         //クリアボタン押下時、画像やjsonのクリア処理
         private void btnClear_click(object sender, EventArgs e)
         { 
+            //作成中
             PictureFrame pf = new PictureFrame(); 
             Image? img = new Image();
 
