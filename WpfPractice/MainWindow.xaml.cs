@@ -53,11 +53,19 @@ namespace WpfPractice
         //クリアボタン押下時、画像やjsonのクリア処理
         private void btnClear_click(object sender, EventArgs e)
         { 
-            //作成中
-            PictureFrame pf = new PictureFrame(); 
-            Image? img = new Image();
+            //一度削除して、作り直す
+            //中身の要素のみを削除する方法は発見出来なかった
+            PictureFrame pf = new PictureFrame();
+            ContentsRoot2.Children.Remove(pf);
+            pf.Width = 300;
+            pf.Height = 200;
+            ContentsRoot2.Children.Add(pf);
 
-            pf.PicturePanel.Children.Add(img) ;
+            CourseListMenuControl cmc = new CourseListMenuControl();
+            ContentsRoot.Children.Remove(cmc);
+            cmc.Width = 220;
+            cmc.HorizontalAlignment = HorizontalAlignment.Left;
+            ContentsRoot.Children.Add(cmc);
 
         }
     }
