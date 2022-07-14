@@ -27,18 +27,20 @@ namespace WpfPractice
         }
 
         /// <summary>
-        /// [今だけ] 学科を定義した json を落としてロードする
+        /// ドロップしたファイルをパネルに適用
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void UserControl_Drop(object sender, DragEventArgs e)
         {
+            //ファイルを取得
             var files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            
+            //複数あったら一つ目のみ
             var fileName = files[0];
-            
+            //Image型にして今回のファイル格納
             Image img =new Image();
             img.Source = new BitmapImage(new Uri(fileName));
+            //パネルに反映
             StackPanel pp = new StackPanel();
             pp.Children.Add(img);
             Content = pp;
