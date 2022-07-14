@@ -35,6 +35,7 @@ namespace WpfPractice
             Visibility hidd = Visibility.Hidden;
             Grid grid = new Grid();
             Grid grid1 = new Grid();
+            //表示しているほうは非表示に
             if (ContentsRoot.Visibility == visi)
             {
 
@@ -46,7 +47,7 @@ namespace WpfPractice
                 grid.Visibility = visi;
                 grid1.Visibility = hidd;
             }
-
+            //それぞれにvisivlity振り分け
             ContentsRoot.Visibility = grid.Visibility;
             ContentsRoot2.Visibility = grid1.Visibility;
         }
